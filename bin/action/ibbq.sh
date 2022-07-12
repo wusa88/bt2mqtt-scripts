@@ -10,7 +10,7 @@ publish() {
   probe=$1
   read value
   # echo $probe : $value
-  /usr/bin/mosquitto_pub -h ${mqtthost} -t "${basetopic}${probe}" -m "${value}"
+  /usr/bin/mosquitto_pub -h ${mqtthost} -p port -u username -P password -t "${basetopic}${probe}" -m "${value}"
 }
 export -f publish
 
